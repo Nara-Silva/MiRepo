@@ -1,0 +1,173 @@
+
+.contenedor-formulario {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+
+  .cabecera-formulario {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cabecera-formulario .titulo-principal {
+    display: block;  
+    color: #0077cc;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .subtitulo {
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  /* Estructura del formulario */
+  .formulario-datos {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contenedor-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .grupo-campos {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .campo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necesario para posicionar las sugerencias */
+  }
+  
+  .campo-completo {
+    flex: 0 0 100%;
+  }
+  
+  /* Estilos de los inputs */
+  .entrada {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ced7e0;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 5; /* Asegura que el input esté sobre las sugerencias cuando está activo */
+    background: white;
+  }
+  
+  .entrada:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+  }
+  
+  /* Estilos para las listas de sugerencias - REVISADO */
+  .lista-sugerencias {
+    position: absolute;
+    top: 100%; /* Aparece justo debajo del input */
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none; /* Elimina el borde superior para unión visual con el input */
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Mayor que el z-index del input */
+    margin-top: -1px; /* Solapa ligeramente el borde del input */
+  }
+  
+  .item-sugerencia {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .item-sugerencia:hover {
+    background-color: #f5f9fc;
+  }
+  
+  /* Controles de navegación */
+  .controles-navegacion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1; /* Asegura que estén detrás de las sugerencias */
+  }
+  
+  .boton-principal, .boton-secundario {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .boton-principal {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+  }
+  
+  .boton-principal:hover {
+    background-color: #005fa3;
+  }
+  
+  .boton-secundario {
+    background-color: white;
+    color: #0077cc;
+    border: 1px solid #0077cc;
+  }
+  
+  .boton-secundario:hover {
+    background-color: #f5f9fc;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contenedor-formulario {
+      width: 95%;
+      padding: 1.5rem;
+    }
+    
+    .grupo-campos {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .controles-navegacion {
+      flex-direction: column;
+    }
+    
+    .boton-principal, .boton-secundario {
+      width: 100%;
+    }
+  
+    /* Ajustes específicos para móviles */
+    .lista-sugerencias {
+      max-height: 150px; /* Menor altura en móviles */
+    }
+  }

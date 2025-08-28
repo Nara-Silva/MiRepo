@@ -1,0 +1,120 @@
+.pago-container {
+    max-width: 520px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .pago-titulo {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pago-subtitulo {
+    text-align: center;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .pago-preview {
+    background-color: #f4f4f4;
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  
+  .pago-iconos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .pago-numero {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .pago-detalles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .pago-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .pago-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .pago-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .pago-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+  }
+  
+  .pago-input-group label {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .pago-input {
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .pago-error {
+    color: red;
+    font-size: 0.9rem;
+    text-align: left;
+    margin: -0.5rem 0 0.5rem 0.2rem;
+  }
+  
+  .pago-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  
+  .pago-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pago-primario {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pago-secundario {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .pago-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

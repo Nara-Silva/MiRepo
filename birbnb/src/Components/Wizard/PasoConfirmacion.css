@@ -1,0 +1,277 @@
+:root {
+  --color-primario: #0077cc;
+  --color-secundario: #005fa3;
+  --color-fondo: #f8fafc;
+  --color-borde: #e2e8f0;
+  --color-texto: #2d3748;
+  --color-subtexto: #4a5568;
+  --color-destacado: #ff5722;
+}
+
+.contenedor-confirmacion {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Nunito', sans-serif;
+  color: var(--color-texto);
+}
+
+.titulo-confirmacion {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.titulo-confirmacion::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: var(--color-primario);
+}
+
+.seccion-resumen-alojamiento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background-color: var(--color-fondo);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+}
+
+.alojamiento-imagen-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.imagen-alojamiento {
+  width: 100%;
+  height: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.info-alojamiento h3 {
+  font-size: 1.4rem;
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.info-alojamiento p {
+  color: var(--color-subtexto);
+  line-height: 1.5;
+}
+
+.resumen-reserva {
+  flex: 1;
+  min-width: 280px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+}
+
+.resumen-reserva h3 {
+  font-size: 1.2rem;
+  color: var(--color-primario);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-borde);
+}
+
+.resumen-reserva ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resumen-reserva li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  word-break: break-word;
+}
+
+.resumen-reserva li:last-child {
+  border-bottom: none;
+}
+
+.resumen-reserva strong {
+  color: var(--color-texto);
+  font-weight: 600;
+}
+
+.seccion-datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.grupo-datos {
+  flex: 1;
+  min-width: 280px;
+  background-color: var(--color-fondo);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+}
+
+.grupo-datos h3 {
+  font-size: 1.2rem;
+  color: var(--color-primario);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-borde);
+}
+
+.grupo-datos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grupo-datos li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.grupo-datos li:last-child {
+  border-bottom: none;
+}
+
+.grupo-datos strong {
+  min-width: 120px;
+  display: inline-block;
+  color: var(--color-texto);
+  font-weight: 600;
+}
+
+.seccion-boton-total {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-borde);
+  margin-top: 2rem;
+  gap: 1.5rem;
+}
+
+.precio-total {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.precio-total strong {
+  color: var(--color-destacado);
+  font-size: 1.6rem;
+}
+
+.boton-confirmar {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.3);
+}
+
+.boton-confirmar:hover {
+  background-color: var(--color-secundario);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 119, 204, 0.4);
+}
+
+.boton-confirmar:active {
+  transform: translateY(0);
+}
+
+.boton-volver {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--color-primario); /* Color sólido */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.boton-volver:hover {
+  background-color: var(--color-secundario); /* Cambia a un color diferente al pasar el mouse */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.boton-volver:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.boton-volver:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-confirmacion {
+    padding: 1.5rem;
+  }
+
+  .imagen-alojamiento {
+    height: 180px;
+  }
+
+  .titulo-confirmacion {
+    font-size: 1.5rem;
+  }
+
+  .seccion-boton-total {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grupo-datos li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grupo-datos strong {
+    min-width: unset;
+  }
+
+  .resumen-reserva {
+    width: 100%;
+  }
+}

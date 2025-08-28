@@ -1,0 +1,338 @@
+:root {
+  --main-color: #0077cc;
+  --dark-color: #005fa3;
+  --step-color: #ced7e0;
+  --step-size: 32px;
+}
+
+.reserva-wizard-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  height: auto;
+  width: 100%;
+}
+
+.alojamiento-container-izquierda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  gap: 30px;
+}
+
+.item-reserva-container{
+    width: 80%;
+    height: 40%;
+    margin-top: 30px;
+    background-color: white;
+}
+
+.mapa-container{
+    width: 80%;
+    height: 40%;
+    margin-bottom: 30px;
+    background-color: rgb(142, 204, 50);
+}
+
+/* WIZARD PRINCIPAL */
+.form-wizard {
+  width: 80%;
+  background-color: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wizard h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.progress-container {
+  position: relative;
+  margin-bottom: 32px;
+  width: 100%;
+  padding: 0 calc(var(--step-size) / 2); /* Añadido para compensar */
+}
+
+.progress-container::before {
+  content: "";
+  height: 4px;
+  width: 100%; /* Cambiado a 100% */
+  background-color: var(--step-color);
+  position: absolute;
+  top: calc(var(--step-size) / 2);
+  left: 0; /* Cambiado a 0 */
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.progress {
+  height: 4px;
+  width: 100%; /* Cambiado a 100% */
+  background-color: var(--main-color);
+  position: absolute;
+  top: calc(var(--step-size) / 2);
+  left: 0; /* Cambiado a 0 */
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.progress-container ol {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  z-index: 3;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.progress-container li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Ajuste para los círculos de los pasos */
+.progress-container li::before {
+  counter-increment: step;
+  content: counter(step);
+  width: var(--step-size);
+  height: var(--step-size);
+  background-color: var(--step-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 4;
+}
+
+/* Ajuste para el texto debajo de los círculos */
+.progress-container li span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--step-color);
+  transition: color 0.3s ease;
+}
+
+/* Estado completado */
+.progress-container li.done::before {
+  background-color: var(--main-color);
+}
+
+.progress-container li.done span {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Estado actual */
+.progress-container li.current::before {
+  background-color: var(--main-color);
+  box-shadow: 0 0 0 4px rgba(0, 119, 204, 0.2);
+}
+
+.progress-container li.current span {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Efecto de destello para el paso actual */
+.progress-container li.current::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--step-size) / 2 - 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 119, 204, 0.3);
+  animation: destelloSutil 2s infinite;
+  z-index: 3;
+}
+
+@keyframes destelloSutil {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.3); }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  gap: 16px;
+}
+
+.controls button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: var(--dark-color);
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fechas-container-derecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.fechas-container h2 {
+  margin-bottom: 1rem;
+}
+
+.campo {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.boton-continuar {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.boton-continuar:hover {
+  background-color: #005fa3;
+}
+
+
+@media (max-width: 1024px) {
+  .reserva-wizard-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .form-wizard {
+    width: 90%;
+    padding: 24px;
+  }
+
+  .alojamiento-container-izquierda {
+    width: 90%;
+  }
+
+  .item-reserva-container,
+  .mapa-container {
+    width: 100%;
+  }
+
+  .progress-container li span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .progress-container::before,
+  .progress {
+    display: none;
+  }
+
+  .form-wizard h1 {
+    font-size: 1.4rem;
+  }
+
+  .progress-container {
+    padding: 0;
+  }
+
+  .progress-container ol {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .progress-container li {
+    align-items: center;
+  }
+
+  .progress-container li span {
+    font-size: 0.7rem;
+    width: auto;
+    text-align: center;
+  }
+
+  .progress-container li::before {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+
+  .fechas-container-derecha {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .campo input {
+    font-size: 0.95rem;
+  }
+
+  .boton-continuar {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+}

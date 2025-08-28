@@ -1,0 +1,116 @@
+.carousel-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .loading,
+  .no-results {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 60px 20px;
+    color: #999;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Espaciado entre slides */
+  .slick-slide > div {
+    padding: 0 12px;
+  }
+  
+  /* Flechas personalizadas */
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 44px;
+    height: 44px;
+    background-color: #0077ff;
+    border-radius: 50%;
+    border: none;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 119, 255, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .slick-prev:hover,
+  .slick-next:hover {
+    background-color: #005bb5;
+    box-shadow: 0 4px 12px rgba(0, 91, 181, 0.6);
+    color: #fff;
+  }
+  
+  /* Íconos dentro de flechas */
+  .slick-prev svg,
+  .slick-next svg {
+    color: white;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+  }
+  
+  /* Posición flechas */
+  .slick-prev {
+    left: -60px;
+  }
+  
+  .slick-next {
+    right: -60px;
+  }
+  
+  /* Responsive ajustes */
+  @media (max-width: 1024px) {
+    .slick-prev {
+      left: -40px;
+    }
+  
+    .slick-next {
+      right: -40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-title {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+  
+    .slick-prev,
+    .slick-next {
+      width: 36px;
+      height: 36px;
+    }
+  
+    .slick-prev svg,
+    .slick-next svg {
+      width: 14px;
+      height: 14px;
+    }
+  
+    .slick-prev {
+      left: -30px;
+    }
+  
+    .slick-next {
+      right: -30px;
+    }
+  }
+  

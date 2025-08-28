@@ -1,0 +1,147 @@
+.calendario {
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05); /* fondo translúcido */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  width: 65%;
+  height: 70%;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  align-items: baseline;
+
+}
+
+.calendario-header h3 {
+  margin: 0;
+  font-size: 1em;
+  color: black;
+  text-transform: capitalize;
+  
+}
+
+.calendario-header button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 90px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.calendario-header button:hover {
+  background-color: #005fa3;
+}
+
+
+.dias-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  grid-template-rows: auto auto repeat(6, 1fr); /* fila para nombre días + 6 semanas */
+  color: black;
+}
+
+.nombre-dia {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: lowercase;
+  color: black;
+  margin-bottom: 4px;
+}
+
+/* Día del calendario */
+.dia {
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: black;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dia:hover {
+  background-color: #dceeff;
+}
+
+.dia.ocupado {
+  background-color: #a5a5a5;
+  color: white;
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* Estados */
+.libre {
+  background-color: rgba(0, 150, 136, 0.1);
+  color: rgba(0, 0, 0, 0.466);
+}
+
+.ocupado {
+  background-color: rgba(244, 67, 54, 0.25);
+  color: rgba(0, 0, 0, 0.466);
+  cursor: not-allowed;
+}
+
+.seleccionado {
+  background-color: rgba(76, 175, 80, 0.25);
+  color: rgba(0, 0, 0, 0.466);
+}
+
+@media (max-width: 600px) {
+  .calendario {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .dia {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+
+  .nombre-dia {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .calendario {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .dias-grid {
+    gap: 4px;
+  }
+
+  .nombre-dia, .dia {
+    font-size: 3.5vw;
+    padding: 10px 0;
+    min-height: auto;
+  }
+
+  .dia {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

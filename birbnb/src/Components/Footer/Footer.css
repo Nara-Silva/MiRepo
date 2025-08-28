@@ -1,0 +1,151 @@
+.footer {
+  background-color: var(--color--primario);
+  color: white;
+  margin: 0; 
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  flex: 1 1 250px;
+  text-align: center;
+}
+.titulo-footer {
+  font-size: 1.17em; /* tamaño estándar aproximado de h3 */
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.mierdaparaElFooter{
+  font-size: 1.1875rem;
+}
+
+.footer-left h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.contacto {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.footer-right {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  flex: 2 1 500px;
+}
+
+.footer-column {
+  min-width: 120px;
+  margin-left: 45px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-column a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.2s;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+}
+
+.github {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.github a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.github a:hover {
+  color: #ccc;
+}
+
+
+@media (max-width: 900px) {
+  .footer-content {
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .footer-right {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 25px;
+  }
+
+  .footer-column {
+      margin-left: 0;
+      min-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+      padding: 0 10px;
+  }
+
+  .footer-left {
+      flex: 1 1 100%;
+      margin-bottom: 25px;
+  }
+
+  .footer-right {
+      flex-direction: column;
+      flex: 1 1 100%;
+      gap: 20px;
+  }
+
+  .footer-column {
+      min-width: 100%;
+      margin-left: 0;
+  }
+
+  .footer-column h4 {
+      font-size: 15px;
+  }
+
+  .footer-column a {
+      font-size: 14px;
+  }
+
+  .footer-bottom {
+      font-size: 13px;
+  }
+
+  .github {
+      margin-top: 20px;
+  }
+}

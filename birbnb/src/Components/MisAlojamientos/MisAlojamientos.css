@@ -1,0 +1,397 @@
+/* Estilos generales */
+.mis-alojamientos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo-principal {
+    color: #2d3436;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+}
+
+/* Lista de alojamientos */
+.lista-alojamientos {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Tarjeta de alojamiento */
+.tarjeta-alojamiento {
+    display: grid;
+    grid-template-columns: 300px 1fr 150px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+}
+
+.tarjeta-alojamiento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Sección de imagen */
+.alojamiento-imagen-container {
+    border-radius: 20px;
+    height: 220px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+}
+
+.alojamiento-imagen {
+    width: 100%;
+    margin-left: 10px;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.tarjeta-alojamiento:hover .alojamiento-imagen {
+    transform: scale(1.05);
+}
+
+.imagen-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #dfe6f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #636e72;
+    font-size: 1rem;
+}
+
+/* Sección de información */
+.info-alojamiento {
+    padding: 1.5rem;
+}
+
+.nombre-alojamiento {
+    font-size: 1.5rem;
+    color: #2d3436;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.descripcion {
+    color: #636e72;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.detalles-alojamiento {
+    display: grid;
+    gap: 1rem;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    color: #2d3436;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.icono-detalle {
+    color: var(--color-primario);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Sección de acciones */
+.acciones-alojamiento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.boton-accion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.boton-accion.eliminar {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.boton-accion.eliminar:hover {
+    background-color: #ffcdd2;
+}
+
+.boton-accion.editar {
+    font-size: 15px;
+    background-color: #ecebff;
+    color: var(--color--primario);
+}
+
+/* Estados */
+.sin-alojamientos {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.sin-alojamientos p {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primario {
+    color: var(--color-primario);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primario:hover {
+    background-color: var(--color-atencion1);
+    color: white;
+}
+.btn-mas-alojamientos{
+    color: var(--color--primario);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-mas-alojamientos:hover {
+    background-color: var(--color-atencion1);
+    color: white;
+}
+.mis-alojamientos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.mis-alojamientos-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    gap: 1.5rem;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(108, 92, 231, 0.2);
+    border-top-color: #6c5ce7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.formulario-edicion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.formulario-edicion input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.formulario-edicion input:focus {
+    outline: none;
+    border-color: #0060a3; /* tu color primario */
+}
+
+.formulario-edicion button {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.formulario-edicion button:first-of-type {
+    background-color: #0060a3;
+    color: white;
+}
+
+.formulario-edicion button:first-of-type:hover {
+    background-color: #004a7a;
+}
+
+.formulario-edicion button:last-of-type {
+    background-color: #ccc;
+    color: #333;
+}
+
+.formulario-edicion button:last-of-type:hover {
+    background-color: #bbb;
+}
+
+/* Botones de acción generales (editar, eliminar) */
+.boton-accion {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.boton-accion.editar {
+    background-color: #e0e7ff;
+    color: #1e40af;
+}
+
+.boton-accion.editar:hover {
+    background-color: #c7d2fe;
+}
+
+.boton-accion.eliminar {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.boton-accion.eliminar:hover {
+    background-color: #fecaca;
+}
+
+/* Estilos para el formulario de edición */
+.formulario-edicion {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.formulario-edicion input,
+.formulario-edicion textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.formulario-edicion input:focus,
+.formulario-edicion textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+.textarea-edicion {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.grupo-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+
+.boton-accion.guardar {
+    background-color: #dcdef3;
+    color: #1c5091;
+}
+
+.boton-accion.guardar:hover {
+    background-color: #a8b8e0;
+}
+
+.boton-accion.cancelar {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.boton-accion.cancelar:hover {
+    background-color: #ffcdd2;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .tarjeta-alojamiento {
+        grid-template-columns: 250px 1fr 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tarjeta-alojamiento {
+        grid-template-columns: 1fr;
+    }
+    
+    .alojamiento-imagen-container {
+        height: 200px;
+    }
+    
+    .acciones-alojamiento {
+        flex-direction: row;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mis-alojamientos-container {
+        padding: 1rem;
+    }
+    
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+    
+    .acciones-alojamiento {
+        flex-direction: column;
+    }
+}
+

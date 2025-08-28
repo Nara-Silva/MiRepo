@@ -1,0 +1,255 @@
+.carousel-container-items {
+  padding: 20px 200px;
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+
+  /*agrego estos dos de abajo para verificacion*/
+  min-height: 300px; 
+  /* border: 2px dashed red; */
+}
+
+.slick-prev, .slick-next {
+  display: none !important;
+}
+
+.slick-cloned[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+/* flecha utilizada para el carousel */
+.arrowCarousel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: rgba(255, 255, 255, 0.9); /* fondo blanco translúcido */
+  border: 1px solid #ddd;
+  border-radius: 9999px; 
+  padding: 12px;
+  cursor: pointer;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.arrowCarousel:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+
+/* flecha izquierda del carousel*/
+.arrowCarousel-left {
+  left: -50px;
+}
+
+/*Esto lo agregamos */
+.arrowCarousel:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* flecha derecha del carousel*/
+.arrowCarousel-right {
+  right: -50px;
+}
+
+
+/* para cada slide, para la adaptacion de slides*/
+.slick-slide > div {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Spinner-carrusel */
+.spinner-carrusel {
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.spinner-carrusel.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner-carrusel .spinner-carrusel-blade {
+  position: absolute;
+  left: 0.4629em;
+  bottom: 0;
+  width: 0.074em;
+  height: 0.2777em;
+  border-radius: 0.0555em;
+  background-color: transparent;
+  -webkit-transform-origin: center -0.2222em;
+  -ms-transform-origin: center -0.2222em;
+  transform-origin: center -0.2222em;
+  animation: spinner-carrusel-fade9234 1s infinite linear;
+}
+
+.loader-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(2) {
+  -webkit-animation-delay: 0.083s;
+  animation-delay: 0.083s;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(3) {
+  -webkit-animation-delay: 0.166s;
+  animation-delay: 0.166s;
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(4) {
+  -webkit-animation-delay: 0.249s;
+  animation-delay: 0.249s;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(5) {
+  -webkit-animation-delay: 0.332s;
+  animation-delay: 0.332s;
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(6) {
+  -webkit-animation-delay: 0.415s;
+  animation-delay: 0.415s;
+  -webkit-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(7) {
+  -webkit-animation-delay: 0.498s;
+  animation-delay: 0.498s;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(8) {
+  -webkit-animation-delay: 0.581s;
+  animation-delay: 0.581s;
+  -webkit-transform: rotate(210deg);
+  -ms-transform: rotate(210deg);
+  transform: rotate(210deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(9) {
+  -webkit-animation-delay: 0.664s;
+  animation-delay: 0.664s;
+  -webkit-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(10) {
+  -webkit-animation-delay: 0.747s;
+  animation-delay: 0.747s;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(11) {
+  -webkit-animation-delay: 0.83s;
+  animation-delay: 0.83s;
+  -webkit-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+
+.spinner-carrusel .spinner-carrusel-blade:nth-child(12) {
+  -webkit-animation-delay: 0.913s;
+  animation-delay: 0.913s;
+  -webkit-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+
+@keyframes spinner-carrusel-fade9234 {
+  0% {
+    background-color: #69717d;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 1200px) {
+  .carousel-container-items {
+    padding: 20px 100px;
+  }
+
+  .arrowCarousel-left {
+    left: -30px;
+  }
+
+  .arrowCarousel-right {
+    right: -30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel-container-items {
+    padding: 20px 40px;
+  }
+
+  .arrowCarousel-left {
+    left: -20px;
+  }
+
+  .arrowCarousel-right {
+    right: -20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-container-items {
+    padding: 20px 10px;
+  }
+
+  .arrowCarousel-left {
+    left: -10px;
+  }
+
+  .arrowCarousel-right {
+    right: -10px;
+  }
+}
+
+

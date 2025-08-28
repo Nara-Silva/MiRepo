@@ -1,0 +1,89 @@
+.alojamiento-item-reserva-container {
+    max-width: 500px;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 24px;
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .titulo-img {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .titulo-img h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 12px;
+    color: #222;
+    flex: 1;
+    word-break: break-word;
+  }
+  
+  .detalle-img-item {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .priceAndCaracteristics {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+  }
+  
+  .priceAndCaracteristics p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .Precio-total {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .Precio-total p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0077cc;
+    margin: 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    .alojamiento-item-reserva-container {
+      padding: 16px;
+      border-radius: 16px;
+    }
+  
+    .titulo-img h3 {
+      font-size: 18px;
+    }
+  
+    .priceAndCaracteristics p {
+      font-size: 15px;
+    }
+  
+    .Precio-total p {
+      font-size: 17px;
+    }
+  
+    .detalle-img-item {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  

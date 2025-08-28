@@ -1,0 +1,679 @@
+
+.hamburguesa{
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+  gap: 20px; /* Espaciado entre los elementos */
+  background-color: var(--color--fondo); /* Fondo claro */
+  padding: 20px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde del rectángulo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  position: relative;
+}
+
+
+.search-bar {
+  font-family: 'Poppins', sans-serif;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border: 0px solid white;
+  border-radius: 20px;
+  overflow: visible;
+  background-color:white;
+  position: relative;
+}
+
+.navbar-item {
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+  margin: 0px;
+  position: relative;
+}
+
+.texto-navbar-item {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1px;
+  position: relative;
+}
+
+/* TEXTOS */
+
+.label {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.question-label{
+  text-align: center;
+}
+
+
+.navbar-item button {
+  height: 70px;
+  width: 140px;
+  background-color: transparent; 
+  color: black; 
+  border: none; 
+  padding: 1px; 
+  cursor: pointer;
+  border-radius: 20px; 
+  transition: background-color 0.3s ease; 
+}
+
+.navbar-item button:hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+/* cambiar el color del background*/
+.dropdown {
+  display: flex;
+  position: absolute; 
+  top: calc(100% + 6px);
+  left: 0;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  z-index: 9999;
+  min-width: max-content;
+  max-width: 220px;
+  max-height: 200px;
+  text-align: left;
+  flex-direction: column;
+  gap: 0px;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: visible;       /* Asegura que no se corte el texto */
+  text-overflow: unset;    /* Evita puntos suspensivos */
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.question-label {
+  margin-top: 6px;
+  color: gray;
+  color: #333; /* contraste 12.6:1 */
+  font-weight: 500; /* mejora legibilidad sin necesidad de negrita total */
+}
+
+.dropdown li {
+  margin: 0px 0; /* Reduce el espaciado entre los elementos de la lista */
+}
+
+.contador {
+  padding: 5px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-left: auto;
+  display: flex;
+  align-items: center
+}
+
+.search-icon {
+  display: flex;
+  padding: 10px; /* Espaciado interno */
+}
+
+/* ICONO DE BUSCAR*/
+
+
+.boton-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: none;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  gap: 2px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-search:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.icono-busqueda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.texto-buscar {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color--atencion2);
+  animation: aparecer 0.5s ease-in-out forwards;
+}
+
+/* Suave aparición del texto */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateX(-4px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.rebotar-infinito {
+  animation: rebotar 1.5s infinite ease-in-out;
+}
+
+@keyframes rebotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(3px);
+  }
+}
+
+.rotar {
+  transform: rotate(360deg);
+}
+
+.boton-search svg {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 105, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgb(66, 83, 169, 0.5);
+  }
+}
+
+.pulse {
+  animation: pulse-animation 1.3s infinite;
+}
+
+.glow {
+  animation: glow-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow-animation {
+  from {
+    box-shadow: 0 0 2px var(--color-atencion1), 0 0 2px var(--color-atencion1);
+  }
+  to {
+    box-shadow: 0 0 6px var(--color-atencion1), 0 0 20px var(--color-atencion1);
+  }
+}
+
+.fade {
+  animation: fade-animation 2s ease-in-out infinite;
+}
+
+@keyframes fade-animation {
+  0%, 100% { opacity: 1;
+              background-color: white;}
+  50% { opacity: 0.6; 
+        background-color: var(--color-atencion1);}
+}
+
+/* DROPDOWN DE PRECIO*/
+
+.precio-dropdown {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.precio-dropdown label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.precio-dropdown input[type="number"] {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  width: 120px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-symbol {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+  font-size: 14px;
+}
+
+.input-wrapper input {
+  padding-left: 20px; /* espacio para el símbolo $ */
+}
+
+/* DROPDOWN DE CARACTERISTICAS*/
+
+.caracteristicas-dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+  padding-left: 28px;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  margin: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked ~ .custom-checkbox {
+  background-color: var(--color--fondo);
+  border-color: transparent;
+}
+
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-label input[type="checkbox"]:checked ~ .custom-checkbox::after {
+  display: block;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 9px;
+  border: solid rgb(0, 0, 0);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.caracteristica-text {
+  margin-left: 15px;
+}
+
+
+.input-busqueda-lugar { /*HACER QUE QUEDE FIJO*/
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 10px 13px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: #f0f0f0;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+}
+
+.selected-lugar {
+  display: flex;
+  max-height: 20px;
+  align-items: center;
+  gap: 0px;
+}
+
+.texto-lugar {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clear-lugar-button {
+  width: auto;
+  min-width: 15px;
+  max-width: 15px;
+  max-height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto hover solo para el botón */
+.clear-lugar-button:hover {
+  color: #d9363e; /* Rojo más oscuro */
+  background-color: rgba(0, 0, 0, 0.1); /* Fondo claro al pasar el mouse */
+  border-radius: 50%; /* Hace que el fondo sea redondeado */
+}
+
+/* Evita que el hover del contenedor afecte al botón */
+.navbar-item:hover .clear-lugar-button {
+  background-color: transparent; /* Asegura que el botón no herede el hover del contenedor */
+}
+
+/* HUESPEDES */
+
+.huespedes-dropdown {
+  padding: 0px 0px;
+  overflow-y: hidden;
+}
+
+.contador-personalizado {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0px 0px;
+  gap: 0px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+  height: 50px;
+  width: 150px;
+
+}
+
+.boton-contador {
+  background-color: var(--color--fondo);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 0px 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-contador:hover {
+  background-color: #333;
+}
+
+.valor-huespedes {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* MONEDA */
+
+.moneda-dropdown {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.opcion-moneda {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.opcion-moneda:hover {
+  background-color: #f7f7f7;
+}
+
+.opcion-moneda input {
+  display: none;
+}
+
+.texto-borrar-moneda {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: black; /* Rojo para indicar acción de borrar */
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.texto-borrar-moneda:hover {
+  color: #b52a2a; /* Rojo más oscuro al pasar el mouse */
+  text-decoration: underline; /* Subrayado para indicar interactividad */
+}
+
+.texto-borrar-moneda:active {
+  color: #a02626; /* Rojo aún más oscuro al hacer clic */
+}
+
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+}
+
+.seleccionada .custom-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.texto-moneda {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.bandera {
+  font-size: 1.2rem;
+  margin-right: 9px;
+  margin-left: 8px;
+}
+
+/* LUGARES */
+.lugar-dropdown {
+  width: 250px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1000;
+  max-height: 260px; /* importante: alto fijo para contener input + lista */
+  overflow: hidden;  /* evita scroll doble */
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-lugares-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+}
+
+.input-busqueda-lugar {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.item-lugar {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.item-lugar:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .navbar-item {
+    width: 100%;
+    align-items: center;
+  }
+
+  .navbar-item button {
+    width: 100%;
+    height: 60px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display:none;
+  }
+
+  .search-bar.abierto{
+    display: flex;
+  }
+
+  .hamburguesa {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    display: block;
+    background: none;
+    padding: 0px 0px;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    margin: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+  .hamburguesa:hover {
+    background-color: #d0d0d0; /* gris medio al pasar el mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hamburguesa:active {
+    background-color: #bbb; /* gris más oscuro al hacer clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(0.98);
+  }
+
+  .input-busqueda-lugar {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .dropdown {
+    position: static; /* evita desbordes */
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .precio-dropdown label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    gap: 8px; 
+    width: 100%; 
+  }
+
+  .precio-dropdown {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 90%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .contador-personalizado {
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  .contador-personalizado{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0 auto;
+  }
+}

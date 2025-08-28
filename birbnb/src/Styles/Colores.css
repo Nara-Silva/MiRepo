@@ -1,0 +1,29 @@
+:root{
+    --color--atencion: #FCE7EF; /* Rosado claro similar a Airbnb */
+    --color--primario: #0060a3;
+    --color--secundario: #b34a6ffd;
+    --color--fondo: #f3eaf1;
+
+    /* PALETA ALTERNATIVA */
+    --color-atencion1: #f54e00;
+    --color-primario1: #4253A9;
+    --color-secundario1: #55753B;
+    --color-violeta1: #A455A9;
+
+    /* Tipografía */
+  --fuente-principal: 'Segoe UI', sans-serif;
+
+  /* Bordes y sombras */
+  --radio: 10px;
+  --sombra: 0 0 12px rgba(0, 0, 0, 0.07);
+
+}
+
+:root {
+    --bg-color: #f6f8fa;
+    --text-color: #111;
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --button-bg: var(--color-primario);
+    --button-hover: #005fa3;
+  }
